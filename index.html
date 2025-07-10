@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ashaterra - Demo v0.1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="login-screen">
+    <h1>ASHATERRA</h1>
+    <input id="username" placeholder="Username" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="main-menu" class="hidden">
+    <h2>Welcome to Ashaterra</h2>
+    <button onclick="startStory()">Story Mode</button>
+    <button onclick="openSettings()">Settings</button>
+    <button id="dev-panel" class="hidden" onclick="openDevPanel()">Developer Panel</button>
+  </div>
+
+  <div id="story-mode" class="hidden">
+    <p>Welcome, hero. Choose your path:</p>
+    <button onclick="choosePath('salvation')">🕊 Salvation</button>
+    <button onclick="choosePath('ruin')">🔥 Ruin</button>
+  </div>
+
+  <div id="settings" class="hidden">
+    <h3>Settings</h3>
+    <label>Saturation: <input type="range" min="0" max="100" value="50" /></label>
+    <label>Theme:
+      <select onchange="changeTheme(this.value)">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </label>
+  </div>
+
+  <div id="developer" class="hidden">
+    <h3>Developer Tools</h3>
+    <p>Edit roles, effects, story...</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
